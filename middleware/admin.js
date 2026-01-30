@@ -6,7 +6,7 @@ function adminMiddleware(req, res , next){
     const token = req.headers.token;
     const decoded = jwt.verify(token, JWT_ADMIN_PASSWORD);
     
-    //will add try catch block here :D 
+    
     if(decoded){
         req.adminId = decoded.id;
         next();
